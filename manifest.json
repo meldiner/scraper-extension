@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Scraper extension",
+  "version": "0.1",
+  "description": "Scrapes a web page and saves it to S3",
+  "permissions": ["activeTab", "webNavigation", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
